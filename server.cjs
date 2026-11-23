@@ -1,0 +1,35 @@
+'use strict';
+const http=require('node:http'),fs=require('node:fs'),path=require('node:path');
+const E=require('./engine.cjs'),D=require('./data.cjs'),A=require('./accounts.cjs'),{createStorage}=require('./storage.cjs');
+const storage=createStorage(),rooms=new Map(),limits=new Map(),base=path.join(__dirname,'public');let state,tail=Promise.resolve();
+const ready=storage.load().then(value=>{state=value;for(const r of state.rooms)rooms.set(r.code,r)});ready.catch(()=>{});
+function json(res,status,body){res.writeHead(status,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'});res.end(JSON.stringify(body))}
+async function body(req){let raw='';for await(const part of req){raw+=part;if(raw.length>200000)throw Error('Requisição muito grande.')}return JSON.parse(raw||'{}')}
+function auth(req,r){const u=A.current(req,state);return u?r.players.find(p=>!p.bot&&p.accountId===u.id):null}
+function limit(req,authRoute=false,identity=''){const ip=req.headers['x-forwarded-for']?.split(',').pop().trim()||req.socket.remoteAddress;const key=(authRoute?'auth:':'api:')+ip+':'+(authRoute?String(identity).toLowerCase():'');const now=Date.now(),hit=limits.get(key);if(hit&&now-hit.time<60000){if(++hit.count>(authRoute?12:300))throw Error('Muitas solicitações. Aguarde um minuto.')}else limits.set(key,{time:now,count:1});if(limits.size>10000)for(const [k,v] of limits)if(now-v.time>60000)limits.delete(k)}
+async function mutate(req,res,url){const before=structuredClone({...state,rooms:[...rooms.values()]});try{const input=await body(req);let payload;
+ if(['/api/register','/api/login','/api/logout'].includes(url.pathname)){limit(req,true,input.username);payload=await A.handle(req,res,url.pathname,input,state)}
+ else{limit(req);const user=A.current(req,state);if(!user){json(res,401,{error:'Entre na sua conta para jogar.'});return}
+ if(url.pathname==='/api/rooms'){if(rooms.size>=100)throw Error('Limite de salas atingido.');const mine=[...rooms.values()].filter(r=>r.phase!=='finished'&&r.players.some(p=>p.accountId===user.id&&!p.bot));if(mine.length>=8)throw Error('Conclua uma das suas oito campanhas antes de criar outra.');const r=E.makeRoom(input),p=E.addPlayer(r,{...input,accountId:user.id});rooms.set(r.code,r);payload={room:E.view(r,p)}}
+ else{const match=url.pathname.match(/^\/api\/rooms\/([A-F0-9]{8})\/(join|start|action|ready|leave|endorse|negotiate|resume)$/);if(!match){json(res,404,{error:'Rota inválida.'});return}const r=rooms.get(match[1]);if(!r){json(res,404,{error:'Sala não encontrada.'});return}let p=auth(req,r);
+ if(match[2]==='join'){if(p)throw Error('Você já está nessa sala. Use Retomar.');if(r.mode==='solo')throw Error('Esta sala é individual.');p=E.addPlayer(r,{...input,accountId:user.id})}
+ else{if(!p){json(res,403,{error:'Esta conta não participa da sala.'});return}if(match[2]==='start')E.start(r,p);else if(match[2]==='action')E.action(r,p,input);else if(match[2]==='ready')E.ready(r,p);else if(match[2]==='leave')E.leave(r,p);else if(match[2]==='endorse')E.endorse(r,p,input.targetId);else if(match[2]==='negotiate')E.negotiate(r,p,input.targetId)}payload={room:E.view(r,p)}}}
+ state.rooms=[...rooms.values()];await storage.save(state);json(res,200,payload);
+ }catch(e){state=before;rooms.clear();for(const r of state.rooms)rooms.set(r.code,r);res.removeHeader('Set-Cookie');throw e}}
+const server=http.createServer(async(req,res)=>{try{const url=new URL(req.url,'http://localhost');await ready;
+ if(url.pathname==='/healthz')return json(res,storage.healthy()?200:503,{ok:storage.healthy(),release:'0.2.0',persistent:storage.remote});
+ if(url.pathname.startsWith('/api/')){if(req.method==='POST'){const origin=req.headers.origin;if(origin&&new URL(origin).host!==req.headers.host)return json(res,403,{error:'Origem não permitida.'});const work=tail.then(()=>mutate(req,res,url));tail=work.catch(()=>{});return await work}
+ if(req.method!=='GET')return json(res,405,{error:'Método inválido.'});await tail;
+ if(url.pathname==='/api/catalog')return json(res,200,{states:D.territories,realCandidates:D.realCandidates,fictionalCandidates:D.fictionalCandidates,runningMates:D.runningMates,finances:D.finances,actions:D.actions,deputies:D.deputies,ideologies:D.ideologies,sectors:D.sectors,parties:D.parties});
+ if(url.pathname==='/api/me')return json(res,200,await A.handle(req,res,url.pathname,{},state));
+ const user=A.current(req,state);if(!user)return json(res,401,{error:'Entre na sua conta para jogar.'});
+ if(url.pathname==='/api/my-rooms')return json(res,200,{rooms:[...rooms.values()].filter(r=>r.players.some(p=>p.accountId===user.id&&!p.bot)).map(r=>({code:r.code,phase:r.phase,turn:r.turn,name:r.players.find(p=>p.accountId===user.id).candidate.name}))});
+ const info=url.pathname.match(/^\/api\/room-info\/([A-F0-9]{8})$/);if(info){const r=rooms.get(info[1]);if(!r)return json(res,404,{error:'Sala não encontrada.'});return json(res,200,{universe:r.universe,phase:r.phase,occupied:r.players.map(p=>p.candidate.id),colors:r.players.map(p=>p.candidate.color),turnLimit:r.turnLimit})}
+ const match=url.pathname.match(/^\/api\/rooms\/([A-F0-9]{8})$/),r=match?rooms.get(match[1]):null;if(!r)return json(res,404,{error:'Sala não encontrada.'});const p=auth(req,r);if(!p)return json(res,403,{error:'Esta conta não participa da sala.'});return json(res,200,{room:E.view(r,p)});
+ }
+ if(!['GET','HEAD'].includes(req.method)){res.writeHead(405);return res.end()}
+ const file=path.resolve(base,'.'+(url.pathname==='/'?'/index.html':decodeURIComponent(url.pathname)));if(!file.startsWith(base+path.sep)){res.writeHead(403);return res.end()}
+ fs.readFile(file,(err,data)=>{if(err){res.writeHead(404);return res.end('Arquivo não encontrado.')}const types={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'application/javascript; charset=utf-8'};res.writeHead(200,{'Content-Type':types[path.extname(file)]||'application/octet-stream','X-Content-Type-Options':'nosniff','Referrer-Policy':'same-origin','Content-Security-Policy':"default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"});res.end(req.method==='HEAD'?undefined:data)});
+ }catch(e){json(res,storage.healthy()?400:503,{error:!storage.healthy()?'Armazenamento indisponível. Aguarde a reconexão do serviço.':e instanceof SyntaxError?'Dados inválidos.':e.message})}});
+if(require.main===module){ready.then(()=>{const port=Number(process.env.PORT||8092);server.listen(port,'0.0.0.0',()=>{console.log('República • Campanhas: http://localhost:'+port);for(const entries of Object.values(require('node:os').networkInterfaces()))for(const n of entries||[])if(n.family==='IPv4'&&!n.internal)console.log('Multiplayer na mesma rede: http://'+n.address+':'+port)})}).catch(()=>{console.error('Falha ao inicializar a persistência. Confira a configuração do banco.');process.exitCode=1});process.on('SIGTERM',()=>server.close(()=>process.exit(0)))}
+module.exports={server,rooms,ready};

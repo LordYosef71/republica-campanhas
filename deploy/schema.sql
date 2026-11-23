@@ -1,0 +1,11 @@
+create table public.republica_state (id integer primary key check(id=1), data jsonb not null, version integer not null default 0, last_write_id uuid);
+alter table public.republica_state enable row level security;
+revoke all on public.republica_state from public, anon, authenticated;
+grant all on public.republica_state to service_role;
+insert into public.republica_state(id,data) values(1,'{"users":[],"sessions":[],"rooms":[]}'::jsonb);
+create function public.republica_read() returns jsonb language sql security invoker set search_path='' as $$ select jsonb_build_object('data',data,'version',version) from public.republica_state where id=1 $$;
+create function public.republica_write(p_expected integer,p_data jsonb,p_write_id uuid) returns jsonb language plpgsql security invoker set search_path='' as $$ declare doc public.republica_state%rowtype; begin select * into doc from public.republica_state where id=1 for update; if doc.last_write_id=p_write_id then return jsonb_build_object('version',doc.version); end if; if doc.version<>p_expected then raise exception 'Conflito de versão'; end if; update public.republica_state set data=p_data,version=version+1,last_write_id=p_write_id where id=1 returning * into doc; return jsonb_build_object('version',doc.version); end; $$;
+revoke all on function public.republica_read() from public,anon,authenticated;
+revoke all on function public.republica_write(integer,jsonb,uuid) from public,anon,authenticated;
+grant execute on function public.republica_read() to service_role;
+grant execute on function public.republica_write(integer,jsonb,uuid) to service_role;

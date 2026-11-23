@@ -1,0 +1,785 @@
+{
+  "states": [
+    {
+      "uf": "AC",
+      "name": "Acre",
+      "region": "Norte",
+      "voters": 588,
+      "priorities": [
+        "social",
+        "trust"
+      ],
+      "battleground": false
+    },
+    {
+      "uf": "AL",
+      "name": "Alagoas",
+      "region": "Nordeste",
+      "voters": 2325,
+      "priorities": [
+        "social",
+        "machine"
+      ],
+      "battleground": false
+    },
+    {
+      "uf": "AP",
+      "name": "Amapá",
+      "region": "Norte",
+      "voters": 550,
+      "priorities": [
+        "trust",
+        "social"
+      ],
+      "battleground": false
+    },
+    {
+      "uf": "AM",
+      "name": "Amazonas",
+      "region": "Norte",
+      "voters": 2600,
+      "priorities": [
+        "economy",
+        "social"
+      ],
+      "battleground": true
+    },
+    {
+      "uf": "BA",
+      "name": "Bahia",
+      "region": "Nordeste",
+      "voters": 11000,
+      "priorities": [
+        "social",
+        "ground"
+      ],
+      "battleground": true
+    },
+    {
+      "uf": "CE",
+      "name": "Ceará",
+      "region": "Nordeste",
+      "voters": 6800,
+      "priorities": [
+        "social",
+        "trust"
+      ],
+      "battleground": true
+    },
+    {
+      "uf": "DF",
+      "name": "Distrito Federal",
+      "region": "Centro-Oeste",
+      "voters": 2200,
+      "priorities": [
+        "economy",
+        "trust"
+      ],
+      "battleground": true
+    },
+    {
+      "uf": "ES",
+      "name": "Espírito Santo",
+      "region": "Sudeste",
+      "voters": 2900,
+      "priorities": [
+        "economy",
+        "security"
+      ],
+      "battleground": true
+    },
+    {
+      "uf": "GO",
+      "name": "Goiás",
+      "region": "Centro-Oeste",
+      "voters": 4800,
+      "priorities": [
+        "security",
+        "economy"
+      ],
+      "battleground": true
+    },
+    {
+      "uf": "MA",
+      "name": "Maranhão",
+      "region": "Nordeste",
+      "voters": 5000,
+      "priorities": [
+        "social",
+        "machine"
+      ],
+      "battleground": false
+    },
+    {
+      "uf": "MT",
+      "name": "Mato Grosso",
+      "region": "Centro-Oeste",
+      "voters": 2400,
+      "priorities": [
+        "economy",
+        "security"
+      ],
+      "battleground": false
+    },
+    {
+      "uf": "MS",
+      "name": "Mato Grosso do Sul",
+      "region": "Centro-Oeste",
+      "voters": 2000,
+      "priorities": [
+        "security",
+        "trust"
+      ],
+      "battleground": false
+    },
+    {
+      "uf": "MG",
+      "name": "Minas Gerais",
+      "region": "Sudeste",
+      "voters": 16000,
+      "priorities": [
+        "trust",
+        "economy"
+      ],
+      "battleground": true
+    },
+    {
+      "uf": "PA",
+      "name": "Pará",
+      "region": "Norte",
+      "voters": 6100,
+      "priorities": [
+        "social",
+        "ground"
+      ],
+      "battleground": true
+    },
+    {
+      "uf": "PB",
+      "name": "Paraíba",
+      "region": "Nordeste",
+      "voters": 3000,
+      "priorities": [
+        "social",
+        "charisma"
+      ],
+      "battleground": false
+    },
+    {
+      "uf": "PR",
+      "name": "Paraná",
+      "region": "Sul",
+      "voters": 8400,
+      "priorities": [
+        "economy",
+        "security"
+      ],
+      "battleground": true
+    },
+    {
+      "uf": "PE",
+      "name": "Pernambuco",
+      "region": "Nordeste",
+      "voters": 7000,
+      "priorities": [
+        "social",
+        "trust"
+      ],
+      "battleground": true
+    },
+    {
+      "uf": "PI",
+      "name": "Piauí",
+      "region": "Nordeste",
+      "voters": 2500,
+      "priorities": [
+        "social",
+        "ground"
+      ],
+      "battleground": false
+    },
+    {
+      "uf": "RJ",
+      "name": "Rio de Janeiro",
+      "region": "Sudeste",
+      "voters": 13000,
+      "priorities": [
+        "security",
+        "charisma"
+      ],
+      "battleground": true
+    },
+    {
+      "uf": "RN",
+      "name": "Rio Grande do Norte",
+      "region": "Nordeste",
+      "voters": 2500,
+      "priorities": [
+        "social",
+        "trust"
+      ],
+      "battleground": false
+    },
+    {
+      "uf": "RO",
+      "name": "Rondônia",
+      "region": "Norte",
+      "voters": 1200,
+      "priorities": [
+        "security",
+        "ground"
+      ],
+      "battleground": false
+    },
+    {
+      "uf": "RR",
+      "name": "Roraima",
+      "region": "Norte",
+      "voters": 370,
+      "priorities": [
+        "security",
+        "trust"
+      ],
+      "battleground": false
+    },
+    {
+      "uf": "RS",
+      "name": "Rio Grande do Sul",
+      "region": "Sul",
+      "voters": 8500,
+      "priorities": [
+        "security",
+        "trust"
+      ],
+      "battleground": true
+    },
+    {
+      "uf": "SC",
+      "name": "Santa Catarina",
+      "region": "Sul",
+      "voters": 5400,
+      "priorities": [
+        "economy",
+        "security"
+      ],
+      "battleground": false
+    },
+    {
+      "uf": "SE",
+      "name": "Sergipe",
+      "region": "Nordeste",
+      "voters": 1600,
+      "priorities": [
+        "social",
+        "machine"
+      ],
+      "battleground": false
+    },
+    {
+      "uf": "SP",
+      "name": "São Paulo",
+      "region": "Sudeste",
+      "voters": 34000,
+      "priorities": [
+        "economy",
+        "charisma"
+      ],
+      "battleground": true
+    },
+    {
+      "uf": "TO",
+      "name": "Tocantins",
+      "region": "Norte",
+      "voters": 1100,
+      "priorities": [
+        "trust",
+        "economy"
+      ],
+      "battleground": true
+    }
+  ],
+  "candidates": [
+    {
+      "id": "lula",
+      "image": null,
+      "name": "Luiz Inácio Lula da Silva",
+      "shortName": "Lula",
+      "party": "PT",
+      "bloc": "governo e campo popular",
+      "color": "#f50a2c",
+      "pollBase": 38,
+      "stats": {
+        "economy": 61,
+        "social": 83,
+        "security": 46,
+        "trust": 57,
+        "charisma": 74,
+        "machine": 86,
+        "ground": 80
+      },
+      "issues": [
+        "salário mínimo e renda",
+        "programas sociais",
+        "investimento público",
+        "inclusão social"
+      ],
+      "vulnerabilities": [
+        "desgaste do governo",
+        "pressão inflacionária",
+        "relação com o Congresso",
+        "segurança pública"
+      ],
+      "regionBoosts": {
+        "Nordeste": 3.4,
+        "Norte": 1.4
+      },
+      "stateBoosts": {
+        "MG": 1.2,
+        "PA": 1,
+        "BA": 1.8,
+        "CE": 1.6
+      }
+    },
+    {
+      "id": "flavio",
+      "image": null,
+      "name": "Flávio Bolsonaro",
+      "shortName": "Flávio",
+      "party": "PL",
+      "bloc": "direita bolsonarista",
+      "color": "#505089",
+      "pollBase": 31,
+      "stats": {
+        "economy": 58,
+        "social": 36,
+        "security": 80,
+        "trust": 45,
+        "charisma": 62,
+        "machine": 69,
+        "ground": 63
+      },
+      "issues": [
+        "segurança pública",
+        "privatizações",
+        "redução do Estado",
+        "legado Bolsonaro"
+      ],
+      "vulnerabilities": [
+        "rejeição familiar",
+        "conflito institucional",
+        "desgaste do bolsonarismo",
+        "voto feminino e de centro"
+      ],
+      "regionBoosts": {
+        "Sul": 2.8,
+        "Centro-Oeste": 2.6,
+        "Sudeste": 1.1,
+        "Norte": 0.8
+      },
+      "stateBoosts": {
+        "RJ": 2.4,
+        "SC": 1.6,
+        "PR": 1.4,
+        "MT": 1.2,
+        "RO": 1.2,
+        "RR": 1.2,
+        "GO": 0.8
+      }
+    },
+    {
+      "id": "caiado",
+      "image": null,
+      "name": "Ronaldo Caiado",
+      "shortName": "Caiado",
+      "party": "PSD",
+      "bloc": "agro e segurança",
+      "color": "#ffbf00",
+      "pollBase": 6.2,
+      "stats": {
+        "economy": 63,
+        "social": 31,
+        "security": 78,
+        "trust": 61,
+        "charisma": 49,
+        "machine": 55,
+        "ground": 46
+      },
+      "issues": [
+        "segurança e policiamento",
+        "agronegócio",
+        "federalismo",
+        "pacificação institucional"
+      ],
+      "vulnerabilities": [
+        "alinhamento ao agronegócio",
+        "alcance regional",
+        "dependência de Goiás",
+        "posição institucional ambígua"
+      ],
+      "regionBoosts": {
+        "Centro-Oeste": 0.55
+      },
+      "stateBoosts": {
+        "GO": 9.2,
+        "DF": 0.45,
+        "TO": 0.55,
+        "MT": 0.3,
+        "MS": 0.3
+      }
+    },
+    {
+      "id": "zema",
+      "image": null,
+      "name": "Romeu Zema",
+      "shortName": "Zema",
+      "party": "NOVO",
+      "bloc": "liberal anti-PT",
+      "color": "#ef8c33",
+      "pollBase": 2.8,
+      "stats": {
+        "economy": 79,
+        "social": 37,
+        "security": 54,
+        "trust": 59,
+        "charisma": 46,
+        "machine": 49,
+        "ground": 41
+      },
+      "issues": [
+        "privatizações",
+        "ajuste fiscal",
+        "redução do Estado",
+        "eficiência de gestão"
+      ],
+      "vulnerabilities": [
+        "alcance concentrado em Minas Gerais",
+        "baixa capilaridade no Nordeste",
+        "imagem pouco calorosa",
+        "agenda fiscal impopular"
+      ],
+      "regionBoosts": {
+        "Sudeste": 1.1,
+        "Sul": 0.3
+      },
+      "stateBoosts": {
+        "MG": 7.8,
+        "ES": 0.6,
+        "SP": 0.8
+      }
+    },
+    {
+      "id": "renan",
+      "image": null,
+      "name": "Renan Santos",
+      "shortName": "Renan Santos",
+      "party": "Missão",
+      "bloc": "direita digital",
+      "color": "#cc842b",
+      "pollBase": 7.2,
+      "stats": {
+        "economy": 55,
+        "social": 34,
+        "security": 58,
+        "trust": 33,
+        "charisma": 60,
+        "machine": 24,
+        "ground": 29
+      },
+      "issues": [
+        "reforma do STF",
+        "liberdade de expressão",
+        "renovação política",
+        "gestão liberal"
+      ],
+      "vulnerabilities": [
+        "nicho digital",
+        "baixa capilaridade partidária",
+        "polarização on-line",
+        "baixo conhecimento nacional"
+      ],
+      "regionBoosts": {
+        "Sudeste": 0.45,
+        "Sul": 0.25
+      },
+      "stateBoosts": {
+        "SP": 2.5,
+        "DF": 0.45,
+        "SC": 0.25,
+        "PR": 0.25,
+        "RJ": 0.12
+      }
+    },
+    {
+      "id": "augusto",
+      "image": null,
+      "name": "Augusto Cury",
+      "shortName": "Cury",
+      "party": "Avante",
+      "bloc": "outsider motivacional",
+      "color": "#80c8cb",
+      "pollBase": 1,
+      "stats": {
+        "economy": 46,
+        "social": 45,
+        "security": 36,
+        "trust": 41,
+        "charisma": 63,
+        "machine": 16,
+        "ground": 18
+      },
+      "issues": [
+        "saúde mental",
+        "educação",
+        "gestão humanizada",
+        "desenvolvimento humano"
+      ],
+      "vulnerabilities": [
+        "inexperiência política",
+        "estrutura limitada",
+        "plano econômico pouco conhecido"
+      ],
+      "regionBoosts": {
+        "Sudeste": 0.2
+      },
+      "stateBoosts": {
+        "SP": 0.3,
+        "RJ": 0.2,
+        "MG": 0.2
+      }
+    },
+    {
+      "id": "clariana",
+      "image": null,
+      "name": "Clariana Barão",
+      "shortName": "Clariana",
+      "party": "DC",
+      "bloc": "centro conservador de nicho",
+      "color": "#2878b2",
+      "pollBase": 0.2,
+      "stats": {
+        "economy": 28,
+        "social": 26,
+        "security": 24,
+        "trust": 22,
+        "charisma": 21,
+        "machine": 6,
+        "ground": 7
+      },
+      "issues": [
+        "valores conservadores",
+        "família",
+        "renovação moral",
+        "pauta de costumes"
+      ],
+      "vulnerabilities": [
+        "baixíssimo reconhecimento",
+        "estrutura mínima",
+        "capilaridade residual",
+        "polarização nacional"
+      ],
+      "regionBoosts": {},
+      "stateBoosts": {
+        "DF": 0.04,
+        "GO": 0.03
+      }
+    },
+    {
+      "id": "pablo-marcal",
+      "image": null,
+      "name": "Pablo Marçal",
+      "shortName": "Marçal",
+      "party": "PRTB",
+      "bloc": "direita digital",
+      "color": "#6f86a8",
+      "pollBase": 0.85,
+      "stats": {
+        "economy": 38,
+        "social": 25,
+        "security": 42,
+        "trust": 27,
+        "charisma": 68,
+        "machine": 12,
+        "ground": 14
+      },
+      "issues": [
+        "empreendedorismo",
+        "antissistema",
+        "ordem",
+        "crítica à política tradicional"
+      ],
+      "vulnerabilities": [
+        "rejeição elevada",
+        "estrutura partidária limitada",
+        "baixa capilaridade fora das redes"
+      ],
+      "regionBoosts": {
+        "Sudeste": 0.2
+      },
+      "stateBoosts": {
+        "SP": 0.4,
+        "GO": 0.12
+      }
+    },
+    {
+      "id": "wilson-grassi",
+      "image": null,
+      "name": "Wilson Grassi",
+      "shortName": "Wilson Grassi",
+      "party": "DEM",
+      "bloc": "centro de partido pequeno",
+      "color": "#2596be",
+      "pollBase": 0.04,
+      "stats": {
+        "economy": 24,
+        "social": 22,
+        "security": 20,
+        "trust": 19,
+        "charisma": 17,
+        "machine": 4,
+        "ground": 4
+      },
+      "issues": [
+        "gestão",
+        "moderação",
+        "centro político",
+        "agenda local"
+      ],
+      "vulnerabilities": [
+        "desconhecimento nacional",
+        "ausência de máquina nacional",
+        "baixo apelo popular"
+      ],
+      "regionBoosts": {},
+      "stateBoosts": {}
+    },
+    {
+      "id": "hertz",
+      "image": null,
+      "name": "Hertz Dias",
+      "shortName": "Hertz Dias",
+      "party": "PSTU",
+      "bloc": "esquerda radical",
+      "color": "#e96666",
+      "pollBase": 0.05,
+      "stats": {
+        "economy": 28,
+        "social": 36,
+        "security": 18,
+        "trust": 25,
+        "charisma": 18,
+        "machine": 4,
+        "ground": 9
+      },
+      "issues": [
+        "socialismo",
+        "direitos trabalhistas",
+        "mobilização popular"
+      ],
+      "vulnerabilities": [
+        "eleitorado muito restrito",
+        "estrutura reduzida",
+        "baixo conhecimento nacional"
+      ],
+      "regionBoosts": {},
+      "stateBoosts": {}
+    },
+    {
+      "id": "samara",
+      "image": null,
+      "name": "Samara Martins",
+      "shortName": "Samara",
+      "party": "UP",
+      "bloc": "esquerda popular radical",
+      "color": "#8c8c8c",
+      "pollBase": 0.08,
+      "stats": {
+        "economy": 26,
+        "social": 41,
+        "security": 16,
+        "trust": 24,
+        "charisma": 22,
+        "machine": 5,
+        "ground": 10
+      },
+      "issues": [
+        "moradia",
+        "trabalho",
+        "periferia",
+        "organização popular"
+      ],
+      "vulnerabilities": [
+        "baixa capilaridade",
+        "eleitorado pequeno",
+        "desconhecimento nacional"
+      ],
+      "regionBoosts": {
+        "Nordeste": 0.02
+      },
+      "stateBoosts": {}
+    },
+    {
+      "id": "rui",
+      "image": null,
+      "name": "Rui Costa Pimenta",
+      "shortName": "Rui Costa",
+      "party": "PCO",
+      "bloc": "trotskista residual",
+      "color": "#cc5a54",
+      "pollBase": 0.05,
+      "stats": {
+        "economy": 22,
+        "social": 32,
+        "security": 14,
+        "trust": 21,
+        "charisma": 16,
+        "machine": 3,
+        "ground": 8
+      },
+      "issues": [
+        "anti-imperialismo",
+        "organização operária",
+        "ruptura institucional"
+      ],
+      "vulnerabilities": [
+        "linguagem de nicho",
+        "alcance muito baixo",
+        "estrutura nacional limitada"
+      ],
+      "regionBoosts": {},
+      "stateBoosts": {
+        "SP": 0.03
+      }
+    },
+    {
+      "id": "edmilson",
+      "image": null,
+      "name": "Edmilson Costa",
+      "shortName": "Edmilson",
+      "party": "PCB",
+      "bloc": "comunista residual",
+      "color": "#9f1017",
+      "pollBase": 0.08,
+      "stats": {
+        "economy": 24,
+        "social": 35,
+        "security": 15,
+        "trust": 23,
+        "charisma": 17,
+        "machine": 4,
+        "ground": 8
+      },
+      "issues": [
+        "comunismo",
+        "direitos sociais",
+        "organização sindical"
+      ],
+      "vulnerabilities": [
+        "alcance residual",
+        "ausência de máquina",
+        "baixo reconhecimento"
+      ],
+      "regionBoosts": {},
+      "stateBoosts": {}
+    }
+  ]
+}

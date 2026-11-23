@@ -1,0 +1,7 @@
+REPÚBLICA • CAMPANHAS 0.2
+
+Execute iniciar-jogo.cmd e abra http://localhost:8092.
+Crie uma conta com usuário e senha nesta página.
+Para jogar com outras pessoas, compartilhe o endereço do servidor e o código da sala.
+Contas e partidas são exclusivas deste jogo.
+Instruções, mecânicas e estado da hospedagem estão em README.md e deploy/status.json.
