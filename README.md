@@ -1,5 +1,25 @@
 # República • Campanhas
 
+## Atualização 0.4 — campanha local, eventos e exposição pública
+
+Cada jogador escolhe estado e cidade do domicílio **para esta partida**. Esse território recebe bônus inicial e eleitoral; concentrar uma ação na cidade de origem aumenta sua eficiência no estado. A cidade representa uma base local no modelo estadual, não uma simulação municipal separada com o cadastro real de eleitores. O cadastro de cidades é livre e associado ao estado escolhido; as capitais são sugestões. Nada disso declara o domicílio real de pessoas públicas.
+
+O menu comum foi reduzido para oito ações, com três ações de mídia em painel separado. As demais respostas só aparecem conforme o evento da semana. Nove crises fictícias incluem petróleo, guerra, epidemia, finanças globais, taxações, Suprema Corte, Congresso, clima e aversão a candidatura. Cada crise libera duas respostas próprias. O servidor impede usar ações bloqueadas mesmo se o cliente tentar enviar sua identificação diretamente.
+
+O fluxo de seleção usa janelas próprias: estadual (seletor de UF), vários estados (caixas com abas de todos/selecionados), regional (cinco regiões) e nacional (confirmação sem lista territorial). A seleção múltipla aceita de dois até todos os territórios, com custo crescente. O exterior continua participando da eleição e das ações nacionais.
+
+As pesquisas de três institutos fictícios incluem fichas independentes para as 27 UFs e o exterior, agregados regionais e nacional ponderados, além de popularidade, aceitação, rejeição e indecisão sobre a imagem de cada candidatura. Esses indicadores de imagem somam 100 por candidatura (exceto a popularidade, que é independente), não entre candidatos. A intenção mostrada é normalizada entre candidaturas; não há modelo separado de brancos/nulos. Resultados iguais de pesquisa podem continuar dentro da margem de erro. No empate eleitoral exato, os critérios de jogo são maior aceitação, menor rejeição, popularidade, reputação, carisma e, persistindo igualdade total, sorteio previamente fixado e informado. Não são regras eleitorais reais.
+
+O formato foi inspirado nas explicações públicas do [Datafolha](https://datafolha.folha.uol.com.br/sobre/perguntas-e-respostas/pesquisas-eleitorais/) sobre amostras, recortes e margem de erro e no relatório [Genial/Quaest — estados, fevereiro de 2025](https://quaest.com.br/wp-content/uploads/2025/02/GENIALQUAESTESTADOSFEV25.pdf), que separa conhecimento, potencial de voto e rejeição. Não foram importados seus percentuais nem atribuídos dados fictícios a esses institutos reais.
+
+O painel de imagem inclui os onze rótulos pedidos: mentiroso, corrupto, honesto, fingido, populista, bem-intencionado, experiente, mal-educado, eloquente, destemido e articulador. Todos são índices sintéticos da partida, sem acusações ou avaliação factual de pessoas reais. Ações e repercussões alteram esses índices, a reputação e os seguidores. O painel mostra ganhos/perdas de seguidores e histórico semanal.
+
+Ataques políticos e fake news são mecânicas abstratas, sem criação de acusações ou notícias falsas sobre pessoas reais. Um ataque pode repercutir negativamente sobre o autor. Fake news tem apenas 20% de chance de repercussão favorável e sempre desgasta a confiabilidade; uma checagem negativa também reduz reputação e seguidores. O servidor sorteia o resultado.
+
+Há três debates nacionais (30%, 60% e 90% do primeiro turno: semanas 3, 6 e 9 no padrão de dez) e uma sabatina individual para cada equipe (semana 2 no padrão). Cada participação contém cinco temas e custa uma decisão e 15 de energia no início; respostas parciais podem ser retomadas. Nos debates, cada tema permite desafiar outra candidatura, com defesa simulada a partir dos atributos do adversário. A sabatina não aceita desafios. No final, três veículos fictícios avaliam o desempenho, com veredicto geral bom ou ruim e efeitos sobre reputação e seguidores. Encerrar a semana sem responder todos os temas gera avaliação com os temas não respondidos valendo zero.
+
+Além da receita do modelo financeiro, o balanço registra bônus de desempenho (até R$ 30 milhões simulados), influenciado por ações, metas, reputação e boa exposição. Metas territoriais cumpridas também rendem suas recompensas próprias. O servidor preserva contas e campanhas existentes ao migrar os novos campos.
+
 ## Atualização 0.3 — ritmo, pesquisas e campanha territorial
 
 Primeiro turno com 10 semanas por padrão; segundo turno com cinco. Cada equipe tem cinco decisões por semana. Depois que todas encerram, o servidor publica o balanço semanal e abre um intervalo de 20 segundos. O prazo fica salvo no banco e é verificado pelo servidor; recarregar a página não o reinicia. Uma semana equivale a uma rodada, não a uma semana de calendário real.
