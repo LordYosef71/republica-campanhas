@@ -62,7 +62,7 @@ Além da receita do modelo financeiro, o balanço registra bônus de desempenho 
 
 ## Atualização 0.3 — ritmo, pesquisas e campanha territorial
 
-Primeiro turno com 10 semanas por padrão; segundo turno com cinco. Cada equipe tem cinco decisões por semana. Depois que todas encerram, o servidor publica o balanço semanal e abre um intervalo de 20 segundos. O prazo fica salvo no banco e é verificado pelo servidor; recarregar a página não o reinicia. Uma semana equivale a uma rodada, não a uma semana de calendário real.
+Primeiro turno com 10 semanas por padrão; segundo turno com cinco. Cada equipe tem cinco decisões por semana. Depois que todas encerram, o servidor publica o balanço semanal e abre um intervalo de 5 segundos. O prazo fica salvo no banco e é verificado pelo servidor; recarregar a página não o reinicia. Uma semana equivale a uma rodada, não a uma semana de calendário real.
 
 Durante a campanha, o mapa e o radar mostram estimativas de três institutos fictícios, com amostras e margens de erro distintas. As pesquisas ficam congeladas durante cada semana e são renovadas no encerramento. O apoio interno e os votos não são enviados ao navegador; a apuração só acontece ao encerrar as semanas eleitorais, após o intervalo. A apuração do primeiro turno permanece visível durante o segundo.
 
