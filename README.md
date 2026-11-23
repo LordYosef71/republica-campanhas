@@ -1,5 +1,21 @@
 # República • Campanhas
 
+## Atualização 0.6 — diretório, interações e organização em abas
+
+A interface usa onze abas e tema Brasil verde/amarelo por padrão, com alternativas clara e escura. Mapas e gráficos usam fundo cinza claro. A seleção de UF e o encerramento da semana ficam acessíveis entre abas. As decisões registram descrição, abrangência, aderência local e variações de verba, seguidores e reputação.
+
+O vice pode mobilizar uma região, arrecadar ou articular o Congresso, uma vez por semana. Podcasts e falas regionais integram a estratégia de mídia. O catálogo tem quinze espectros ideológicos e a receita recorrente dos quinze modelos financeiros aumentou 50%; isso não aumenta retroativamente o caixa inicial.
+
+Dossiês autênticos usam somente registros internos da partida. Sem irregularidade no jogo, não geram acusação. Dossiês adulterados podem ser checados com desgaste da autoria, perda de seguidores e tensão partidária. Nenhum conteúdo é uma acusação factual sobre pessoas reais. A verdade interna permanece oculta dos adversários até a checagem. Acusações continuam permitindo resposta, contra-ataque e petição.
+
+O diretório acompanha coesão e caixa partidário, disputa local e pedidos de apoio. Governador, Senado e Câmara têm candidaturas locais fictícias. Somente governadores podem disputar segundo turno local; os demais cargos consolidam sua votação na primeira eleição. Se a presidência acabar no primeiro turno, o calendário local é consolidado automaticamente ao final da partida. Pesquisas não revelam o resultado interno futuro.
+
+No segundo turno presidencial, pedidos gratuitos podem resultar em apoio pessoal. Propostas financeiras são transferências simuladas ao caixa do partido derrotado, condicionadas ao aceite da liderança; esse apoio partidário é distinto do apoio pessoal. Uma candidatura derrotada pode apoiar gratuitamente um adversário mesmo quando seu partido negocia outro apoio. O dinheiro do partido permite até duas atividades semanais após a eliminação presidencial. Os eleitores continuam aderindo gradualmente, conforme afinidade e aceitação nos estados; não há transferência imediata de votos.
+
+A escolha inicial de apoio ao governo, oposição ou independência afeta a popularidade conforme economia, serviços, segurança e avaliação da gestão variam. Reeleição implica vínculo governista e recebe pesquisas sintéticas de aprovação, desaprovação e indecisão dos três institutos. Após o evento inicial, novas ocorrências aleatórias só podem surgir a cada três semanas (uma crise ou sorte/revés). Crises descrevem o cenário e o desgaste de impressão provocado.
+
+O segundo turno tem sabatina na semana 1 e debates nas semanas 2 e 4, todos obrigatórios, com cinco temas, perguntas regionais e escolha da região da fala. Uma boa participação concede R$ 8 mi e desempenho semanal adicional, além dos efeitos de imagem. A apuração agora dura cerca de três minutos em 1×; o anfitrião escolhe UF, região ou distribuição nacional como origem dos boletins. A ordem não altera os votos. O mapa interativo acompanha as parciais e inclui acesso ao exterior.
+
 ## Atualização 0.5 — sete decisões, política local e totalização
 
 O jogo usa **sete decisões por equipe por semana** e removeu o recurso de energia. Verba e decisões disponíveis limitam as ações. Organizar a campanha agora reforça voluntários e confiabilidade. Em semanas de debate ou sabatina, a participação nos cinco temas é obrigatória; a última decisão fica reservada para iniciá-la. O servidor impede encerrar a semana sem concluir a participação. Os quatro eventos usam vinte temas distintos por partida e perguntas selecionadas de um banco de quarenta; a sabatina varia também por candidatura.
