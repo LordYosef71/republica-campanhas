@@ -1,5 +1,11 @@
 # República • Campanhas
 
+## Atualização 0.7 — primeira rodada de simplificação
+
+A navegação caiu de onze para seis abas: Resumo, Campanha, Pesquisas, Alianças, Adversários e Agenda. Mídia e vice ficam dentro de Campanha; governo fica junto às pesquisas; finanças, redes e histórico ficam no Resumo. Detalhes secundários usam painéis recolhíveis que preservam seu estado ao atualizar a sala. As ações principais aparecem primeiro; as demais continuam em Mais estratégias. Cada ação exibe custo e botão, com efeitos e aderência sob demanda. O perfil do vice mostra somente a descrição da missão selecionada e pede região apenas para caravana.
+
+O guia da semana indica a próxima decisão, destaca participação obrigatória e leva diretamente ao debate ou à sabatina. A navegação aceita teclado e preserva referências de abas salvas nas versões anteriores. Domicílio, trajetória e opções de apuração foram agrupados na preparação. Esta etapa reduz sobrecarga de apresentação; não muda regras, custos, duração, contas ou partidas salvas.
+
 ## Atualização 0.6 — diretório, interações e organização em abas
 
 A interface usa onze abas e tema Brasil verde/amarelo por padrão, com alternativas clara e escura. Mapas e gráficos usam fundo cinza claro. A seleção de UF e o encerramento da semana ficam acessíveis entre abas. As decisões registram descrição, abrangência, aderência local e variações de verba, seguidores e reputação.
