@@ -34,7 +34,7 @@ function cost(p,a,scope='state',count=2){let v=a.cost*p.finance.cost;if(p.financ
 function action(r,p,input){
  if(!['first','runoff'].includes(r.phase))fail('Campanha não está em andamento.');if(p.eliminated)fail('Sua chapa foi eliminada.');if(p.ready)fail('Você já encerrou este turno.');if(p.actionsLeft<=0)fail('Suas cinco decisões terminaram.');
  const a=choose(D.actions,input.actionId),state=D.territories.find(s=>s.uf===input.uf)||fail('Estado inválido.');
- V.checkAction(r,p,a,input);const target=R.targets(a,input,state);const usedKey=a.id+':'+state.uf;if(a.id!=='rest'&&target.states.some(s=>p.used.includes(a.id+':'+s.uf)))fail('Esta ação já foi usada em um dos estados neste turno.');
+ V.checkAction(r,p,a,input);const target=R.targets(a,input,state);if(input.cityFocus===true&&(target.scope!=='state'||state.uf!==p.domicile.uf))fail('O foco na cidade de origem exige uma ação estadual no seu domicílio.');const usedKey=a.id+':'+state.uf;if(a.id!=='rest'&&target.states.some(s=>p.used.includes(a.id+':'+s.uf)))fail('Esta ação já foi usada em um dos estados neste turno.');
  const expense=cost(p,a,target.scope,target.states.length);if(p.money<expense)fail('Verba insuficiente.');if(p.energy<a.energy)fail('Energia insuficiente.');
  if(a.id==='investigate'&&!r.players.some(q=>q.id===input.targetId&&q.id!==p.id))fail('Selecione outra campanha para investigar.');
  let deputy=null;if(a.id==='deputy'){deputy=D.deputies.find(d=>d.id===input.deputyId&&d.uf===state.uf)||fail('Escolha um deputado deste estado.');if(r.deputies[deputy.id])fail('Deputado já tem uma aliança.');}
