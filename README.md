@@ -1,5 +1,23 @@
 # República • Campanhas
 
+## Atualização 0.5 — sete decisões, política local e totalização
+
+O jogo usa **sete decisões por equipe por semana** e removeu o recurso de energia. Verba e decisões disponíveis limitam as ações. Organizar a campanha agora reforça voluntários e confiabilidade. Em semanas de debate ou sabatina, a participação nos cinco temas é obrigatória; a última decisão fica reservada para iniciá-la. O servidor impede encerrar a semana sem concluir a participação. Os quatro eventos usam vinte temas distintos por partida e perguntas selecionadas de um banco de quarenta; a sabatina varia também por candidatura.
+
+Ao terminar a eleição, após o balanço semanal, começa uma tela de totalização progressiva. Boletins fictícios de cada UF e do exterior chegam em lotes, com seções, votos nominais, válidos, brancos, nulos, comparecimento e abstenção. Os totais são inteiros e consistentes. Brancos e nulos ficam fora do denominador dos válidos. A primeira eleição exige mais de 50% dos válidos para vitória direta; caso contrário, os dois primeiros avançam. A decisão é tomada pelos votos totalizados, não por uma pesquisa nem pela média anterior de eleitores aptos.
+
+O anfitrião pode escolher velocidades compartilhadas de 0,5×, 1×, 2×, 5×, 10× ou 100×. Em 1×, a animação dura cerca de um minuto de servidor. A velocidade não altera os votos, não retrocede a contagem e vale para toda a sala. Não se declara vencedor antes de concluir a totalização. O estado e o relógio são persistidos; voltar à sala recupera a etapa correspondente.
+
+O formato foi inspirado na [documentação técnica de divulgação do TSE](https://www.tse.jus.br/eleicoes/informacoes-tecnicas-sobre-a-divulgacao-de-resultados-2024) e na explicação de [totalização de resultados](https://www.tse.jus.br/eleicoes/historia/processo-eleitoral-brasileiro/totalizacao). As contagens, seções, comparecimento e transmissão são simulados, não dados do TSE. Os critérios de desempate continuam sendo os critérios próprios de jogo documentados abaixo.
+
+As pesquisas agora ficam em janela própria, com seletores independentes de recorte estadual, regional e nacional. Um gráfico mostra a evolução da liderança estimada em cada UF, com registro de viradas e ressalva de margem de erro. A tela da apuração possui gráficos das parciais e marca mudanças de liderança durante a chegada dos boletins.
+
+Há comícios estaduais, duas ações específicas por UF conforme suas prioridades sintéticas, governadores fictícios com apoio exclusivo e articulação parlamentar. O painel informa se a equipe tem o apoio do governador selecionado. A trajetória inicial pode ser sem mandato, vereador, prefeito, deputado estadual ou federal, senador, governador, vice-presidente ou presidente. A condição de presidente em exercício permite marcar tentativa de reeleição presidencial. Essas escolhas são ficcionais e influenciam popularidade e base inicial do Congresso; não são declarações sobre históricos reais. A base é apresentada como apoios simulados entre 513 deputados e 81 senadores, com limites compartilhados e influência de alianças e governadores.
+
+Fake news e acusações podem gerar casos fictícios envolvendo campanhas. As partes podem exercer resposta, contra-atacar ou apresentar petição, com custos, limite de uma adoção por medida e decisão simulada segundo os fatos internos do jogo. Acusações infundadas podem prejudicar o acusador. Não há efeito jurídico real nem geração de acusações concretas sobre pessoas reais. Eventos de sorte e revés trazem descrição da campanha afetada e efeito mensurável em verba, seguidores, voluntários ou casos.
+
+Validação da versão: 41 testes de servidor e fluxo de interface com duas contas, pesquisas em janela, participação obrigatória e apuração com velocidades. As migrações preservam contas e campanhas e removem o campo antigo de energia.
+
 ## Atualização 0.4 — campanha local, eventos e exposição pública
 
 Cada jogador escolhe estado e cidade do domicílio **para esta partida**. Esse território recebe bônus inicial e eleitoral; concentrar uma ação na cidade de origem aumenta sua eficiência no estado. A cidade representa uma base local no modelo estadual, não uma simulação municipal separada com o cadastro real de eleitores. O cadastro de cidades é livre e associado ao estado escolhido; as capitais são sugestões. Nada disso declara o domicílio real de pessoas públicas.
